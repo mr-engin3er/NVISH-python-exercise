@@ -5,7 +5,7 @@ connection = sqlite3.connect(DB_URI)
 
 cur = connection.cursor()
 
-cur.execute('DROP TABLE IF EXISTS user;');
+cur.execute('DROP TABLE IF EXISTS user;')
 
 cur.execute('''CREATE TABLE user (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -13,9 +13,9 @@ cur.execute('''CREATE TABLE user (
     password TEXT NOT NULL
 );''')
 
-cur.execute('DROP TABLE IF EXISTS posts;');
+cur.execute('DROP TABLE IF EXISTS post;')
 
-cur.execute('''CREATE TABLE posts (
+cur.execute('''CREATE TABLE post (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     title TEXT NOT NULL,

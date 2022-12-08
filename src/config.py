@@ -9,9 +9,9 @@ DB_URI = f"{BASE_DIR}/NVISH_exercise_dev.db"
 load_dotenv(f"{BASE_DIR}/.env")
 
 base_config = {
-    "FLASK_ENV":os.getenv("FLASK_ENV","development"),
-    "SECRET_KEY" : os.getenv("SECRET_KEY","development-key"),
-    "DEBUG" : os.getenv("DEBUG",False)
+    "FLASK_ENV": os.getenv("FLASK_ENV", "development"),
+    "SECRET_KEY": os.getenv("SECRET_KEY", "development-key"),
+    "DEBUG": os.getenv("DEBUG", False)
 }
 
 development_config = {
@@ -30,7 +30,7 @@ production_config = {
 
 testing_config = {
     **base_config,
-    "TESTING" : True,
+    "TESTING": True,
     # add other test configs below
     # "SQLALCHEMY_DATABASE_URI" : f"sqlite:///{BASE_DIR}/NVISH_exercise_test.db",
     # "SQLALCHEMY_TRACK_MODIFICATIONS" : False,

@@ -10,7 +10,7 @@ def login():
     username = request.json.get("username")
     password = request.json.get("password")
     if not username or not password:
-        return {"error":"Username and password is required."},400
+        return {"error":"username and password are required."},400
 
     connection = get_db_connection()
     cur = connection.cursor()
