@@ -45,7 +45,6 @@ def get_post(post_id=None):
             connection.close()
             if post:
                 if is_redis_connected():
-                    print("post",post)
                     set_dict(f"post-{post_id}",post)
                 return {"data": post}, 200
             return {"error": f"post not found with id {post_id}"}, 404

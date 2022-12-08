@@ -2,9 +2,9 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
-
+ENV = os.getenv("ENV","dev")
 BASE_DIR = Path(__file__).resolve().parent.parent
-DB_URI = f"{BASE_DIR}/NVISH_exercise_dev.db"
+DB_URI = f"{BASE_DIR}/NVISH_exercise_{ENV}.db"
 
 load_dotenv(f"{BASE_DIR}/.env")
 

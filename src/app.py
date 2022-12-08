@@ -5,9 +5,9 @@ from .exercise2 import exercise2
 from .exercise3 import exercise3
 
 
-def create_app():
+def create_app(env):
     app = Flask(__name__)
-    app.config.from_mapping(configuration.get("dev"))
+    app.config.from_mapping(configuration.get(env))
 
     app.register_blueprint(exercise1, url_prefix="/")
     app.register_blueprint(exercise2, url_prefix="/")
