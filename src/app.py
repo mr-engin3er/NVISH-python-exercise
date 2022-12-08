@@ -1,13 +1,16 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
 from .config import configuration
 
-db = SQLAlchemy()
 
 def create_app():
+    from .exercise1 import exercise1 
+    from .exercise2 import exercise2
+
     app = Flask(__name__)
     app.config.from_mapping(configuration.get("dev"))
-    db.init_app(app)
+
+    app.register_blueprint(exercise1,url_prefix="/")
+    app.register_blueprint(exercise2,url_prefix="/")
 
     return app
 

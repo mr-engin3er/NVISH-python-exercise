@@ -1,7 +1,10 @@
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+
+
 BASE_DIR = Path(__file__).resolve().parent.parent
+DB_URI = f"{BASE_DIR}/NVISH_exercise_dev.db"
 
 load_dotenv(f"{BASE_DIR}/.env")
 
@@ -13,8 +16,9 @@ base_config = {
 
 development_config = {
     **base_config,
-    "SQLALCHEMY_DATABASE_URI" : f"sqlite:///{BASE_DIR}/NVISH_exercise_dev.db",
-    "SQLALCHEMY_TRACK_MODIFICATIONS" : False,
+    # add other required configs below
+    # "SQLALCHEMY_DATABASE_URI" : f"sqlite:///{BASE_DIR}/NVISH_exercise_dev.db",
+    # "SQLALCHEMY_TRACK_MODIFICATIONS" : False,
 }
 
 production_config = {
@@ -27,9 +31,9 @@ production_config = {
 testing_config = {
     **base_config,
     "TESTING" : True,
-    "SQLALCHEMY_DATABASE_URI" : f"sqlite:///{BASE_DIR}/NVISH_exercise_test.db",
-    "SQLALCHEMY_TRACK_MODIFICATIONS" : False,
     # add other test configs below
+    # "SQLALCHEMY_DATABASE_URI" : f"sqlite:///{BASE_DIR}/NVISH_exercise_test.db",
+    # "SQLALCHEMY_TRACK_MODIFICATIONS" : False,
 }
 
 configuration = {
